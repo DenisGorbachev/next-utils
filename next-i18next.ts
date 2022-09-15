@@ -1,8 +1,9 @@
 import config from '../../../next-i18next.config.cjs'
 import getConfig from 'next/config'
-import { SSRConfig, UserConfig } from 'next-i18next'
+import { SSRConfig, UserConfig, useTranslation } from 'next-i18next'
 import { serverSideTranslations as serverSideTranslationsOriginal } from 'next-i18next/serverSideTranslations'
 import { LocalizedContext } from './next'
+import { withNamespaces } from '../../util/src/i18next'
 
 const { serverRuntimeConfig } = getConfig()
 
@@ -14,4 +15,9 @@ export const serverSideTranslations = async (
 
 export async function getTranslations(context: LocalizedContext, namespaces: string[] = []) {
   return serverSideTranslations(context.locale, namespaces.concat(['common']))
+}
+
+export function useNamespaces(namespaces: string[]) {
+  const { t } = useTranslation(namespaces)
+  return withNamespaces(t, namespaces)
 }
