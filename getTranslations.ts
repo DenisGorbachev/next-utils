@@ -1,7 +1,7 @@
-import config from '../../../next-i18next.config.cjs'
-import getConfig from 'next/config'
 import { SSRConfig, UserConfig } from 'next-i18next'
 import { serverSideTranslations as serverSideTranslationsOriginal } from 'next-i18next/serverSideTranslations'
+import getConfig from 'next/config'
+import config from '../../../next-i18next.config.cjs'
 import { LocalizedContext } from './next'
 
 const { serverRuntimeConfig } = getConfig()
