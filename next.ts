@@ -1,5 +1,5 @@
-import { ParsedUrlQuery } from 'querystring'
 import { GetServerSidePropsContext as $GetServerSidePropsContext, GetServerSidePropsResult, GetStaticPropsContext as $GetStaticPropsContext, GetStaticPropsResult } from 'next'
+import { ParsedUrlQuery } from 'querystring'
 
 export type LocalizedContext = Required<Pick<$GetStaticPropsContext, 'locale' | 'locales' | 'defaultLocale'>>
 
